@@ -1,6 +1,5 @@
 
-# setting working directory
-setwd("D:/Schulungen/coursera/DataScience-Specialization/R-Developing/3_GettingCleaningData/CourseProject/UCI_HAR_Dataset")
+run_analysis <- function () {
 
 # load the needed data
 TestX<- read.table("./test/X_test.txt")
@@ -33,7 +32,7 @@ total <- rbind(total_Test, total_Train)
 # 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 columnNames <- colnames(total)
 
-MeanStdCols <- grepl("(Subject_ID|Act_ID|mean|std", colNames,ignore.case=T)    # Build a logical vector with TRUE for the needed columns
+MeanStdCols <- grepl("(Subject_ID|Act_ID|mean|std)", columnNames,ignore.case=T)    # Build a logical vector with TRUE for the needed columns
 
 total_relevant <- total[MeanStdCols==TRUE]    # Discard every column not needed
 
@@ -78,3 +77,5 @@ tidyData <- aggregate(totalminusactID[,names(totalminusactID) != c("Activity Cat
 
 
 write.table(tidyData, './tidyData.txt',row.names=FALSE,sep='\t') # Export the tidy data set 
+
+}
