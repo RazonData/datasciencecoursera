@@ -1,3 +1,8 @@
+```{r setoptions, echo=TRUE}
+require(knitr)
+opts_chunk$set(echo = TRUE, cache = TRUE, cache.path = "cache/", fig.path = "figure/")
+```
+
 
 #Reproducible Research  -  Peer Assessments 1
 
