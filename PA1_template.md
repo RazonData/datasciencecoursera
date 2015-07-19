@@ -1,3 +1,4 @@
+opts_chunk$set(echo=TRUE)
 
 
 #Reproducible Research  -  Peer Assessments 1
